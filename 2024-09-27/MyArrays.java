@@ -3,9 +3,11 @@ public class MyArrays{
   {
     int[] nums = new int[]{1,2,3,5,1,3,3};
     int[] nums1 = new int[]{12,3,51,21,5,23};
+    int[] empty = new int[0];
     System.out.println("//// Return Copy Tests");
     System.out.println("//Copied Array: " + arrayToString(returnCopy(nums)) + "\n// Original Address: " + nums + " | New Address: " + returnCopy(nums));
     System.out.println("//Copied Array: " + arrayToString(returnCopy(nums1)) + "\n// Original Address: " + nums1 + " | New Address: " + returnCopy(nums1));
+    System.out.println("//Copied Array: " + arrayToString(returnCopy(empty)) + "\n// Original Address: " + empty+ " | New Address: " + returnCopy(empty));
     System.out.println("//// Concat Array Tests");
     System.out.println("// nums + nums1");
     System.out.println("// Expected: {1, 2, 3, 4, 5, 1, 3, 3, 12, 3, 51, 21, 5, 23}");
@@ -13,6 +15,9 @@ public class MyArrays{
     System.out.println("// nums1 + nums");
     System.out.println("// Expected: {12, 3, 51, 21, 5, 23, 1, 2, 3, 4, 5, 1, 3, 3}");
     System.out.println("// Result: " + arrayToString(concatArray(nums1, nums)));
+    System.out.println("// nums1 + empty");
+    System.out.println("// Expected: {12, 3, 51, 21, 5, 23}");
+    System.out.println("// Result: " + arrayToString(concatArray(nums1, empty)));
   }
 
   public static String arrayToString(int[] nums)
