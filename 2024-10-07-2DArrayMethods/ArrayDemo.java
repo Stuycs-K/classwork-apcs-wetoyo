@@ -6,9 +6,9 @@ public class ArrayDemo{
     //Compare Arrays.toString(yourArray) to YOUR arrayToString() method to make sure yours is correct
     //do not use any other Arrays.method()
     int[][] test1 = new int[][]{{},{}};
-    int[][] test2 = new int[][]{{1,2,3},{4,5,6}, {1,2,3},{4,5,6}};
-    int[][] test3 = new int[][]{{10,30,50,40,102},{1111,111}};
-    int[][] test4 = new int[][]{{1,2,3},{}};
+    int[][] test2 = new int[][]{{1,2,3},{-4,-5,-6}, {1,2,3},{4,5,6}};
+    int[][] test3 = new int[][]{{10,30,50,40,102},{1111,111,111,1111,1}};
+    int[][] test4 = new int[][]{{1,2,3},{3,4,0}};
     TestCase(test1);
     TestCase(test2);
     TestCase(test3);
@@ -18,9 +18,9 @@ public class ArrayDemo{
   {
     System.out.println(countZeros2D(ary));
     System.out.println(arr2DSum(ary));
-    System.out.println(Arrays.toString(replaceNegative(ary)));
-    System.out.println(Arrays.toString(copy(ary)));
-    System.out.println(Arrays.toString(swapRC(ary)));
+    System.out.println(arrToString(replaceNegative(ary)));
+    System.out.println(arrToString(copy(ary)));
+    System.out.println(arrToString(swapRC(ary)));
     System.out.println(htmlTable(ary));
   }
   public static String arrToString(int[] ary) {
@@ -101,7 +101,7 @@ public class ArrayDemo{
     for (int i = 0; i < nums.length; i++)
     {
       result[i] = new int[nums[i].length];
-      for (int k = 0; k < nums[i].length; k++);
+      for (int k = 0; k < nums[i].length; k++)
       {
         result[i][k] = nums[i][k];
       }
@@ -134,7 +134,7 @@ public class ArrayDemo{
     String result = "<table>";
     for(int i = 0; i < nums.length; i++)
     { result += "<tr>";
-      for(int k = 0; k < nums.length; k++)
+      for(int k = 0; k < nums[i].length; k++)
       {
         result += "<td>";
         result += nums[i][k];

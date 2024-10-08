@@ -76,7 +76,7 @@ public class ArrayMethods {
   //-When the row number is the same as the column number replace
   //that negative with the value 1
   //-All other negatives replace with 0
-  public static void replaceNegative(int[][] vals){
+  public static int[][] replaceNegative(int[][] vals){
     for (int i = 0; i < vals.length; i++) {
       for (int k = 0; k < vals[i].length; k++) {
         if (vals[i][k] < 0) {
@@ -97,13 +97,14 @@ public class ArrayMethods {
     for (int i = 0; i < nums.length; i++)
     {
       result[i] = new int[nums[i].length];
-      for (int k = 0; k < nums[i].length; k++);
+      for (int k = 0; k < nums[0].length; k++)
       {
-        result[i][k] = nums[i][k];
+        result[k][i] = nums[i][k];
       }
     }
     return result;
   }
+
 
 
 }
