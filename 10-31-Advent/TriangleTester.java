@@ -60,6 +60,8 @@ public class TriangleTester
         if (end)
         {break;}
         count += (isValid(t0[0],t0[1],t0[2]))? 1 :0;
+        count += (isValid(t2[0],t2[1],t2[2]))? 1 :0;
+        count += (isValid(t1[0],t1[1],t1[2]))? 1 :0;
 
         }
         return count;
