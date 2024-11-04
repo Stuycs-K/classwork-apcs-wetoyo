@@ -10,16 +10,17 @@ public class TriangleTester
       File name = new File(filename);
       Scanner file = new Scanner(name);
       int count = 0;
-      while(file.hasNextLine())
+      int[] values = new int[3];
+      int i =0;
+      while(file.hasNextInt())
       {
-        int v0 = Integer.parseInt(file.next());
-        int v1 = Integer.parseInt(file.next());
-        int v2 = Integer.parseInt(file.next());
-        if (isValid(v0, v1, v2))
+        values[i] = file.nextInt();
+        i++;
+        if (i == 3)
         {
-          count++;
+          count += isValid(values[0], values[1], values[2])? 1 : 0;
+          i = 0;
         }
-        file.nextLine();
       }
       return count;
     }
@@ -35,21 +36,31 @@ public class TriangleTester
       File name = new File(filename);
       Scanner file = new Scanner(name);
       int count = 0;
-      while(file.hasNextLine())
+      while(file.hasNextInt())
         {
         int[] t0 = new int[3];
         int[] t1 = new int[3];
         int[] t2 = new int[3];
+        boolean end = false;
         for (int k = 0; k < 3; k++)
           {
-            t0[k] = Integer.parseInt(file.next());
-            t1[k] = Integer.parseInt(file.next());
-            t2[k] = Integer.parseInt(file.next());
-            file.nextLine();
+            if (file.hasNextInt())
+            {t0[k] = file.nextInt();}
+            else
+            {end = true;}
+            if (file.hasNextInt())
+            {t1[k] = file.nextInt();}
+            else
+            {end = true;}
+            if (file.hasNextInt())
+            {t2[k] = file.nextInt();}
+            else
+            {end = true;}
           }
+        if (end)
+        {break;}
         count += (isValid(t0[0],t0[1],t0[2]))? 1 :0;
-        count += (isValid(t1[0],t1[1],t1[2]))? 1 :0;
-        count += (isValid(t2[0],t2[1],t2[2]))? 1 :0;
+
         }
         return count;
       }
