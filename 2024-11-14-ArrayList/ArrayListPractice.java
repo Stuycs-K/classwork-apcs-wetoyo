@@ -7,7 +7,7 @@ public class ArrayListPractice
     for (int i = 0; i < size; i++)
     {
       String add = "";
-      int rand = = (int)(Math.random() * 11);
+      int rand == (int)(Math.random() * 11);
       add += rand == 0? "" : rand;
       result.add(add);
     }
