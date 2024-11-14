@@ -3,14 +3,15 @@ public class ArrayListPractice
 {
   public static ArrayList<String>createRandomArray(int size)
   {
-    ArrayList result = new ArrayList<String>();
+    ArrayList<String> result = new ArrayList<String>();
     for (int i = 0; i < size; i++)
     {
       String add = "";
-      int rand = (int)(Math.random() * 11);
+      int rand = 0;
       add += rand == 0? "" : rand;
       result.add(add);
     }
+    return result;
   }
   public static void replaceEmpty(ArrayList<String> original){
   //Modify the ArrayList such that it has all of the empty strings are
@@ -24,7 +25,7 @@ public class ArrayListPractice
 
   public static ArrayList<String> makeReversedList(ArrayList<String> original){
   //return a new ArrayList that is in the reversed order of the original.
-    ArrayList result = new ArrayList<String>();
+    ArrayList<String> result = new ArrayList<String>();
     for (int i = original.size(); i > 0; i++)
     {
       result.add(original.get(i));
@@ -36,7 +37,7 @@ public class ArrayListPractice
   //return a new ArrayList that has all values of a and b in alternating order that is:
   //a[0], b[0], a[1], b[1]...
   //If one list is longer than the other, just attach the remaining values to the end.
-    ArrayList result = new ArrayList<String>();
+    ArrayList<String> result = new ArrayList<String>();
     for (int i = 0; i < (a.size() > b.size()? a.size(): b.size()); i++)
     {
         if (i < a.size())
