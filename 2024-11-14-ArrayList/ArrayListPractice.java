@@ -17,7 +17,8 @@ public class ArrayListPractice
   //replaced with the word "Empty".
     for (int i = 0; i < original.size(); i++)
     {
-      original.set(i, "Empty");
+      if (original.get(i).equals(""))
+        original.set(i, "Empty");
     }
   }
 
@@ -50,5 +51,5 @@ public class ArrayListPractice
     return result;
   }
 
-  
+
 }
