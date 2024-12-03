@@ -50,8 +50,6 @@ public class advent
         System.out.println("coords" + item + ":" + axis+ "=" + coords[0] + ":" + coords[1]);
         for (int i = 0; i < tracked.size(); i++)
         {
-          System.out.println("coords" + item + ":" + axis+ "=" + coords[0] + ":" + coords[1]);
-          System.out.println("tracked" + tracked.get(i)[0] + ":" + tracked.get(i)[1]);
           if (Arrays.equals(tracked.get(i), coords))
           {
 
@@ -59,8 +57,7 @@ public class advent
             return Math.abs(coords[0]) + Math.abs(coords[1]);
           }
         }
-        tracked.add(coords);
-
+        tracked.add(coords.clone());
 
       }
       return Math.abs(coords[0]) + Math.abs(coords[1]);
