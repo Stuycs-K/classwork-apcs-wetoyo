@@ -1,3 +1,4 @@
+import java.lang.Math;
 public class ColorDemo
 {
   public static final String CLEAR_SCREEN =  "\u001b[2J";
@@ -6,14 +7,39 @@ public class ColorDemo
 
   public static void main (String[] args)
   {
-    for(int r = 0; r < 256; r+=3){
-      for(int g = 0; g <= 256; g+=2){
-        for(int b = 0; b <= 256; b+=1){
-          System.out.print("\u001b[38;2;"+r+";"+g+";"+b+";7m.");
-        }
+    int r = 0;
+    int g = 0;
+    int b = 0;
+    for(int i = 0; i < 10; i++)
+    {
+
+    for(r = 0; r <= 256; r+=1)
+    {
+      for(int k = 0; k < 100; k++)
+      {
+        r = (int)(Math.random()*200);
+        g = (int)(Math.random()*200);
+        b = (int)(Math.random()*200);
+        System.out.print("\u001b[38;2;"+r+";"+g+";"+b+";7m.");
       }
-        System.out.println();
+      System.out.print("\u001b[38;2;"+r+";"+g+";"+b+";7m.");
+      g++;
+      System.out.print("\u001b[38;2;"+r+";"+g+";"+b+";7m.");
+      b++;
+      System.out.print("\u001b[38;2;"+r+";"+g+";"+b+";7m.");
     }
+    for(r = 256; r > 0; r-=1)
+    {
+      System.out.print("\u001b[38;2;"+r+";"+g+";"+b+";7m.");
+      g--;
+      System.out.print("\u001b[38;2;"+r+";"+g+";"+b+";7m.");
+      b--;
+      System.out.print("\u001b[38;2;"+r+";"+g+";"+b+";7m.");
+    }
+    }
+
+
+
   }
 
   public static void sleep(int milli)
