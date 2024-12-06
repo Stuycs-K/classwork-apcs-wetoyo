@@ -12,9 +12,6 @@ public class ColorDemo
     int b = 0;
     for(int i = 0; i < 10; i++)
     {
-
-    for(r = 0; r <= 256; r+=1)
-    {
       for(int k = 0; k < 100; k++)
       {
         r = (int)(Math.random()*200);
@@ -22,6 +19,9 @@ public class ColorDemo
         b = (int)(Math.random()*200);
         System.out.print("\u001b[38;2;"+r+";"+g+";"+b+";7m.");
       }
+    for(r = 0; r <= 256; r+=1)
+    {
+
       System.out.print("\u001b[38;2;"+r+";"+g+";"+b+";7m.");
       g++;
       System.out.print("\u001b[38;2;"+r+";"+g+";"+b+";7m.");
