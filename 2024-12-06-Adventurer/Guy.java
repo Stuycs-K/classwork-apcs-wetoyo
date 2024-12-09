@@ -29,7 +29,7 @@ public class Guy extends Adventurer{
   public  String attack(Adventurer other)
   {
     other.applyDamage(1);
-    System.out.println("It did nothing!");
+    System.out.println("It did 1 dmg");
     return other.getName();
   }
 
@@ -37,7 +37,7 @@ public class Guy extends Adventurer{
   public String support(Adventurer other)
   {
     other.setHP(other.getHP() + 1);
-    System.out.println("It did nothing!");
+    System.out.println("It gave 1 dmg");
     return other.getName();
   }
 
